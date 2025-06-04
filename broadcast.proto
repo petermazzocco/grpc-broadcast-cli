@@ -1,0 +1,20 @@
+syntax = "proto3";
+package broadcast;
+
+option go_package = ".broadcast";
+
+// The broadcast service definition.
+service Broadcast {
+  // Sends a message
+  rpc SendMessage (MessageRequest) returns (MessageResponse) {}
+}
+
+// The request containing the content being broadcast
+message MessageRequest {
+  string message = 1;
+}
+
+// The response containing the message
+message MessageResponse {
+  string message = 1;
+}
